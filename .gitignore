@@ -1,0 +1,7 @@
+.venv
+data/census_*
+data/places
+*.zip
+*.csv
+*.png
+.DS_Store
