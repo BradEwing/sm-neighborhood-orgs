@@ -482,7 +482,7 @@ class SantaMonicaNeighborhoodAnalysis:
         # Set up plotting style  
         plt.style.use('default')
         fig, axes = plt.subplots(2, 3, figsize=(18, 12))
-        fig.suptitle('Santa Monica Neighborhood Organization Malapportionment Analysis (Fixed)', fontsize=16)
+        fig.suptitle('Santa Monica Neighborhood Organization Malapportionment Analysis', fontsize=16)
         
         # 1. Population by Neighborhood
         ax1 = axes[0, 0]
@@ -556,13 +556,13 @@ Ideal Population: {metrics.get('ideal_population', 0):,.0f}"""
                 bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
         
         plt.tight_layout()
-        plt.savefig('santa_monica_malapportionment_analysis_fixed.png', dpi=300, bbox_inches='tight')
+        plt.savefig('santa_monica_malapportionment_analysis.png', dpi=300, bbox_inches='tight')
         plt.show()
         
     def generate_report(self, stats_df, metrics):
         """Generate a summary report."""
         print("\n" + "="*60)
-        print("SANTA MONICA NEIGHBORHOOD MALAPPORTIONMENT ANALYSIS REPORT (FIXED)")
+        print("SANTA MONICA NEIGHBORHOOD MALAPPORTIONMENT ANALYSIS REPORT")
         print("="*60)
         
         if len(stats_df) == 0:
@@ -604,10 +604,6 @@ Ideal Population: {metrics.get('ideal_population', 0):,.0f}"""
             print("  ⚠️  EXCEEDS legal standard of ±5%")
         else:
             print("  ✓ Meets legal standard")
-        
-        # Save detailed results
-        stats_df.to_csv('neighborhood_demographics_fixed.csv', index=False)
-        print("\nDetailed results saved to 'neighborhood_demographics_fixed.csv'")
         
         return stats_df
 
